@@ -1,0 +1,16 @@
+language: python
+python:
+  - "3.6"
+# command to install dependencies
+install:
+  - pip install numpy
+  - pip install pandas
+  - pip install shapely
+  - pip install coverage
+  - pip install coveralls
+# command to run tests
+script:
+  - coverage run -m unittest discover 'test' '*Test.py'
+# coverage
+after_success:
+  coveralls
