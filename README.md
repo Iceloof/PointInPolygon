@@ -11,6 +11,8 @@
 ![GitHub Action](https://github.com/Iceloof/PointInPolygon/workflows/GitHub%20Action/badge.svg)
 ![GitHub](https://img.shields.io/github/license/Iceloof/PointInPolygon)
 
+This package is used to check point inside/outside of polygon/multipolygon. It is supported polygon to array, convert multipolygon dataframe to polygon, find the min and max item in 2D array.
+
 ## Install
 ```
 pip install PointInPolygon
