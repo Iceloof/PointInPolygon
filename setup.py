@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Iceloof/PointInPolygon",
     packages=setuptools.find_packages(),
-    install_requires=['numpy','pandas','shapely'],
+    install_requires=['numpy','pandas','geopandas','shapely'],
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.6",
