@@ -7,12 +7,21 @@ import PointInPolygon as pnp
 class FunctionsTest(unittest.TestCase):
 
   def testGeo2Array(self):
-    geodf = gpd.read_file('./test/test.geojson')
+    geodf = gpd.read_file('./test/test1.geojson')
     geoarray = pnp.Geo2Array(geodf['geometry'].values[0])
     length = len(geoarray)
-    self.assertEqual(length, 8077)
+    self.assertEqual(length, 7739)
     print('Geo convert to array is correct')
     
+  def testMultiPolygon2Polygon(self):
+    geodf = gpd.read_file('./test/test.geojson')
+    length = len(geodf)
+    self.assertEqual(length, 10)
+    df = pnp.MultiPolygon2Polygon(geodf)
+    length = len(df)
+    self.assertEqual(length, 22)
+    print('Multipolygon convert to array is correct')
+  
   def testPointOnBorder(self):
     t1=[(2,4),(4,2),(5,3),(6,4),(8,5),(9,6),(5,7),(2,6)]
     t2=(5,7)
