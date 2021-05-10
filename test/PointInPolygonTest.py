@@ -8,9 +8,9 @@ class FunctionsTest(unittest.TestCase):
 
   def testGeo2Array(self):
     geodf = gpd.read_file('./test/test.geojson')
-    geoarray = pnp.Geo2Array([geodf['geometry'].values[0]],150)
+    geoarray = pnp.Geo2Array(geodf['geometry'].values[0])
     length = len(geoarray)
-    self.assertEqual(length, 54)
+    self.assertEqual(length, 8077)
     print('Geo convert to array is correct')
     
   def testPointOnBorder(self):
