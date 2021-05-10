@@ -2,14 +2,13 @@ import numpy as np
 from shapely.geometry import mapping
 
 def Geo2Array(geo, skip=0):
-    g = [i for i in geo]
     result = []
-    for item in g:
+    for item in geo:
         all_coords = mapping(item)["coordinates"]
         array = np.array(all_coords)
-        for i in range(array.size):
-            row = list(list(array[i])[0])
-            result+=row
+        while (len(array) == 1):
+            array = array[0]
+        result+=list(array)
         if skip != 0:
             result = result[0::skip]
     return result
