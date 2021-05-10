@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/Iceloof/PointInPolygon.svg)](https://travis-ci.com/Iceloof/PointInPolygon)
 [![Coverage Status](https://coveralls.io/repos/github/Iceloof/PointInPolygon/badge.svg)](https://coveralls.io/github/Iceloof/PointInPolygon)
 [![PyPI](https://img.shields.io/pypi/v/PointInPolygon)](https://pypi.org/project/PointInPolygon/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/PointInPolygon)](https://pypistats.org/packages/PointInPolygon)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/PointInPolygon)](https://pypistats.org/packages/pointinpolygon)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/PointInPolygon)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/PointInPolygon)
 ![GitHub contributors](https://img.shields.io/github/contributors/Iceloof/PointInPolygon)
