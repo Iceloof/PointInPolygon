@@ -15,11 +15,11 @@ def Geo2Array(geo, skip=0):
 
 def MultiPolygon2Polygon(data):
     outdf = gpd.GeoDataFrame(columns=data.columns)
-    for idx, row in indf.iterrows():
+    for idx, row in data.iterrows():
         if type(row.geometry) == Polygon:
             outdf = outdf.append(row,ignore_index=True)
         if type(row.geometry) == MultiPolygon:
-            multdf = gpd.GeoDataFrame(columns=indf.columns)
+            multdf = gpd.GeoDataFrame(columns=data.columns)
             recs = len(row.geometry)
             multdf = multdf.append([row]*recs,ignore_index=True)
             for geom in range(recs):
@@ -28,10 +28,10 @@ def MultiPolygon2Polygon(data):
     return outdf
             
 def minValue(data, index):
-    return min(np.array(data).any(), key = lambda t: t[index])
+    return min(data, key = lambda t: t[index])
 
 def maxValue(data, index):
-    return max(np.array(data).any(), key = lambda t: t[index])
+    return max(data, key = lambda t: t[index])
 
 def PointInPolygon(point, polygon):
     minX = minValue(polygon, 0)[0]
