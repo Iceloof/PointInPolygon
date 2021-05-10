@@ -33,3 +33,31 @@ class FunctionsTest(unittest.TestCase):
     result = pnp.PointInPolygon(t2, t1)
     self.assertFalse(result)
     print('Point outside of polygon is correct')
+  
+  def testMinValueX(self):
+    t1=[(2,4),(4,2),(5,3),(6,4),(8,5),(9,6),(5,7),(2,6)]
+    t2=(2,4)
+    result = pnp.minValue(t1, 0)
+    self.assertEqual(result, t2)
+    print('Min Value X is correct')
+
+  def testMinValueY(self):
+    t1=[(2,4),(4,2),(5,3),(6,4),(8,5),(9,6),(5,7),(2,6)]
+    t2=(4,2)
+    result = pnp.minValue(t1, 1)
+    self.assertEqual(result, t2)
+    print('Min Value Y is correct')
+
+  def testMaxValueX(self):
+    t1=[(2,4),(4,2),(5,3),(6,4),(8,5),(9,6),(5,7),(2,6)]
+    t2=(9,6)
+    result = pnp.maxValue(t1, 0)
+    self.assertEqual(result, t2)
+    print('Max Value X is correct')
+
+  def testMaxValueY(self):
+    t1=[(2,4),(4,2),(5,3),(6,4),(8,5),(9,6),(5,7),(2,6)]
+    t2=(5,7)
+    result = pnp.maxValue(t1, 1)
+    self.assertEqual(result, t2)
+    print('Max Value Y is correct')
