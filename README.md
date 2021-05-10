@@ -32,3 +32,11 @@ pnp.Geo2Array(geo, skip=0)
 ```
 pnp.PointInPolygon(point, polygon)
 ```
+- Get min value from array based on index
+```
+pnp.minValue(array, index)
+```
+- Get max value from array based on index
+```
+pnp.maxValue(array, index)
+```
