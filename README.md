@@ -24,9 +24,13 @@ pip install --upgrade PointInPolygon
 ```
 import PointInPolygon as pnp
 ```
-- Geometry to Array (skip steps to simplify the data and reduce the size of array)
+- Geometry Polygon to Array (skip steps to simplify the data and reduce the size of array, if it is multipolygon, it needs to convert to polygon first)
 ```
 pnp.Geo2Array(geo, skip=0)
+```
+- Convert df multipolygon to polygon (the column name should be geometry)
+```
+pnp.MultiPolygon2Polygon(df)
 ```
 - Check point in polygon (list or 2D tuple)
 ```
