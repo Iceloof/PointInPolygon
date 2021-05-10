@@ -8,7 +8,7 @@ setuptools.setup(
     version="1.0.2",
     author="Hurin Hu",
     author_email="hurin@live.ca",
-    description="Check point in polygon for Python",
+    description="This python package is used to check point inside/outside of polygon/multipolygon. It is supported polygon to array, convert multipolygon dataframe to polygon, find the min and max item in 2D array.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Iceloof/PointInPolygon",
