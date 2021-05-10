@@ -1,18 +1,32 @@
 import numpy as np
+import geopandas as gpd
 from shapely.geometry import mapping
+from shapely.geometry.polygon import Polygon
+from shapely.geometry.multipolygon import MultiPolygon
 
 def Geo2Array(geo, skip=0):
     result = []
-    for item in geo:
-        all_coords = mapping(item)["coordinates"]
-        array = np.array(all_coords)
-        while (len(array) == 1):
-            array = array[0]
-        result+=list(array)
-        if skip != 0:
-            result = result[0::skip]
+    all_coords = mapping(geo)["coordinates"]
+    array = np.array(all_coords)
+    result=list(array[0])
+    if skip != 0:
+        result = result[0::skip]
     return result
 
+def MultiPolygon2Polygon(data):
+    outdf = gpd.GeoDataFrame(columns=data.columns)
+    for idx, row in indf.iterrows():
+        if type(row.geometry) == Polygon:
+            outdf = outdf.append(row,ignore_index=True)
+        if type(row.geometry) == MultiPolygon:
+            multdf = gpd.GeoDataFrame(columns=indf.columns)
+            recs = len(row.geometry)
+            multdf = multdf.append([row]*recs,ignore_index=True)
+            for geom in range(recs):
+                multdf.loc[geom,'geometry'] = row.geometry[geom]
+            outdf = outdf.append(multdf,ignore_index=True)
+    return outdf
+            
 def minValue(data, index):
     return min(np.array(data).any(), key = lambda t: t[index])
 
