@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="PointInPolygon",
-    version="1.0.0",
+    version="1.0.1",
     author="Hurin Hu",
     author_email="hurin@live.ca",
     description="Check point in polygon for Python",
