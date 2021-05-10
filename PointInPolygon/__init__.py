@@ -14,10 +14,10 @@ def Geo2Array(geo, skip=0):
     return result
 
 def minValue(data, index):
-    return min(data, key = lambda t: t[index])
+    return min(np.array(data).any(), key = lambda t: t[index])
 
 def maxValue(data, index):
-    return max(data, key = lambda t: t[index])
+    return max(np.array(data).any(), key = lambda t: t[index])
 
 def PointInPolygon(point, polygon):
     minX = minValue(polygon, 0)[0]
